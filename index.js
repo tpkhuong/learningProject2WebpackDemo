@@ -11,12 +11,12 @@ app.set("views engine", "ejs");
 
 app.set("views", path.join(__dirname, "views"));
 
-app.use(expres.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 /*** express ***/
 
 app.get("/", function homePage(req, res) {
-  res.send("Hello everyone");
+  res.send("index");
 });
 
 app.listen(PORT, function listenOnPort() {
