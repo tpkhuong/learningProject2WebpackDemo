@@ -7,16 +7,15 @@ var app = express();
 
 var PORT = process.env.PORT || 3000;
 /*** ejs ***/
-app.set("views engine", "ejs");
+app.use(express.static(path.join(__dirname, "public")));
+app.set("view engine", "ejs");
 
 app.set("views", path.join(__dirname, "views"));
-
-app.use(express.static(path.join(__dirname, "public")));
 
 /*** express ***/
 
 app.get("/", function homePage(req, res) {
-  res.send("index");
+  res.send("layout");
 });
 
 app.listen(PORT, function listenOnPort() {
