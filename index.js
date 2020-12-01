@@ -15,7 +15,7 @@ app.set("views", path.join(__dirname, "views"));
 /*** express ***/
 
 app.get("/", function homePage(req, res) {
-  res.send("layout");
+  res.render("layout");
 });
 
 app.listen(PORT, function listenOnPort() {
